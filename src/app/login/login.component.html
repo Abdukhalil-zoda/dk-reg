@@ -1,36 +1,36 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="25">
         <mat-toolbar color="primary">Register</mat-toolbar>
-        <form fxLayoutAlign="strech" fxLayout="column" class="login-form">
+        <div fxLayoutAlign="strech" fxLayout="column" class="login-form">
             <mat-form-field>
                 <mat-label>Fullname</mat-label>
-                <input matInput data-FullName placeholder="Gulom Teshayev">
+                <input matInput [(ngModel)]="data.FullName" placeholder="Aziz Aliyev">
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Group</mat-label>
-                <input matInput placeholder="313">
+                <input matInput [(ngModel)]="data.Group" placeholder="08-20">
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="gulyam.t@mail.ru">
+                <input email matInput [(ngModel)]="data.Email" placeholder="aziz.aliyev@mail.ru">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Phone</mat-label>
-                <input matInput placeholder="+998931234567">
+                <input tel matInput [(ngModel)]="data.Phone" placeholder="931234567">
             </mat-form-field>
-            <div fxLayout="row">
-                <img [src]="imagePath" width="200" height="50">
-                <button mat-raised-button color="primary"><img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Antu_amarok_playlist_refresh.svg" width="50" height="50"></button>
+            <div fxLayout="row ">
+                <img [src]="imagePath " width="200 " height="50 ">
+                <button mat-raised-button (click)="refreshCap()" color="primary"><img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Antu_amarok_playlist_refresh.svg " width="50 " height="50 "></button>
             </div>
 
             <mat-form-field>
                 <mat-label>Code</mat-label>
-                <input matInput placeholder="G3C70">
+                <input matInput [(ngModel)]="answer " placeholder="G3C70 ">
             </mat-form-field>
-            <button mat-raised-button type="submit">Register</button>
-        </form>
+            <button mat-raised-button (click)="submit(data) ">Register</button>
+        </div>
 
     </mat-card>
 </div>
